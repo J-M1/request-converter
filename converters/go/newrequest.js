@@ -6,6 +6,7 @@ exports.curlToNewRequest = () => {
 }
 
 
-exports.newRequestToCurl = () => {
-    
+exports.newRequestToCurl = (input) => {
+    const lines = input.split(`\n`)
+    console.log(lines)
 }

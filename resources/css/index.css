@@ -4,3 +4,20 @@ body {
     margin-right: 15%;
     background-color: #F3F4F6;
 }
+
+textarea {
+    border: 1px solid #D1D5DB !important;
+    height: 340px
+}
+
+textarea:active {
+    border: 1px solid #6366F1 !important;
+}
+
+select {
+    border: 1px solid #D1D5DB;
+}  
+
+select:active {
+    border: 1px solid #6366F1 !important;
+}
