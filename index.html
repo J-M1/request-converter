@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>J-M1's Request Converter</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="stylesheet" href="resources/css/tailwind.css">
+        <link rel="stylesheet" href="resources/css/index.css">
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
+        <script src="resources/js/index.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="flex-1 min-w-0">
+                  <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">
+                    Request Converter
+                  </h2>
+                </div>
+                <div class="mt-4 flex md:mt-0 md:ml-4">
+                  <button type="button" class="ml-3 inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    Github
+                  </button>
+                </div>
+              </div>
+        </header>
+
+        <!-- Input Boxes -->
+        <div style="margin-top: 25px;">
+            <div class="md:grid md:grid-cols-4 md:gap-6" style="display: inline-block; min-width: 49%; margin-right: 1.6%;">
+              <div class="mt-5 md:mt-0 md:col-span-2">
+                  <div class="shadow sm:rounded-md sm:overflow-hidden">
+                    <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
+          
+                      <div>
+                        <label for="about" class="block text-lg font-medium text-gray-700">
+                          Input
+                        </label>
+                        <div class="mt-1">
+                          <textarea style="height: 340px; border: 1px solid #D1D5DB;" id="about" name="about" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md" placeholder=""></textarea>
+                        </div>
+                        <div>
+                            <br>
+                            <label for="location" class="block text-sm font-medium text-gray-700">Input Framework</label>
+                            <select id="location" style="border: 1px solid #D1D5DB;" name="location" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+                              <option selected>Auto Detect</option>
+                              <option>cURL (cmd)</option>
+                              <option>Go (http.NewRequest)</option>
+                              <option>Go (http.Request)</option>
+                              <option>Node.js (Request)</option>
+                              <option>Node.js (Got)</option>
+                              <option>Node.js (Fetch)</option>
+                            </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <div class="md:grid md:grid-cols-4 md:gap-6" style="display: inline-block; min-width: 49%;">
+                <div class="mt-5 md:mt-0 md:col-span-2">
+                    <div class="shadow sm:rounded-md sm:overflow-hidden">
+                      <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
+                        <div>
+                          <label for="about" class="block text-lg font-medium text-gray-700">
+                            Output
+                          </label>
+                          <div class="mt-1">
+                            <textarea style="height: 340px;border: 1px solid #D1D5DB;" id="about" name="about" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md" placeholder=""></textarea>
+                          </div>
+                          <div>
+                            <br>
+
+                            <label for="location" class="block text-sm font-medium text-gray-700">Output Framework</label>
+                            <select id="location" style="border: 1px solid #D1D5DB;" name="location" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+                            <option selected>cURL (cmd)</option>
+                            <option>Go (http.NewRequest)</option>
+                            <option>Go (http.Request)</option>
+                            <option>Node.js (Request)</option>
+                            <option>Node.js (Got)</option>
+                            <option>Node.js (Fetch)</option>
+                            </select>
+                        </div>
+                        </div>
+                      </div>             
+                    </div>
+                </div>
+            </div>
+        </div>
+          
+    </body>
+</html>
