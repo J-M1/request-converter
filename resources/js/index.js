@@ -15,11 +15,31 @@ function newRequestToJSON(input) {
 
 
     input.split(`\n`).forEach(line => {
-        let requestInfoRegex = new RegExp(`(?:NewRequest)\(([^)]+)\)`)
-        requestInfoRegex.exec(line) ? console.log(requestInfoRegex.exec(line)[1]) : null
+
+        //Method, URL, body etc
+        let requestInfoRegex = new RegExp(`(?:NewRequest)\\\(([^)]+)\\\)`)
+        if(requestInfoRegex.exec(line)) {
+            requestJSON["Method"] = [...requestInfoRegex.exec(line)[1].matchAll(`["\`'](.*?)["\`'$]`)][0][1]
+            
+        }
     
-        let headerInfoRegex = new RegExp(`(?:Header.Set)\(([^)]+)\)`)
-        headerInfoRegex.exec(line) ? console.log(headerInfoRegex.exec(line)[1]) : null
+
+        //Regex headers from Header.Add(key, val) or Header.Set(key, val)
+        let headerSetRegex = new RegExp(`(?:Header.Set)\\\(([^)]+)\\\)`)
+        let headerAddRegex = new RegExp(`(?:Header.Add)\\\(([^)]+)\\\)`)
+        if(headerSetRegex.exec(line)) {
+            const headerObj = [...headerSetRegex.exec(line)[1].matchAll(`["\`'](.*?)["\`']`)]
+            requestJSON.Headers.push({
+                [headerObj[0][1]]: headerObj[1][1]
+            })
+        } else if (headerAddRegex.exec(line)) {
+            const headerObj = [...headerAddRegex.exec(line)[1].matchAll(`["\`'](.*?)["\`']`)]
+            requestJSON.Headers.push({
+                [headerObj[0][1]]: headerObj[1][1]
+            })
+        }
+
+
     });
 
     console.log(requestJSON)
